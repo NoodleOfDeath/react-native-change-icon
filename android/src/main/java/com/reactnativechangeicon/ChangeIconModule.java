@@ -12,6 +12,7 @@ import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.module.annotations.ReactModule;
 
 import java.util.HashSet;
@@ -60,7 +61,7 @@ public class ChangeIconModule extends ReactContextBaseJavaModule implements Appl
     }
 
     @ReactMethod
-    public void changeIcon(String iconName, Promise promise) {
+    public void changeIcon(String iconName, ReadableMap params, Promise promise) {
         final Activity activity = getCurrentActivity();
         final String activityName = activity.getComponentName().getClassName();
         if (activity == null) {
